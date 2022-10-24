@@ -8,6 +8,10 @@ from within the scope of a unit test. For example, to test the public
 implementation of a client package against a fully-functioning instance of
 the server package.
 
+Generally speaking, if your server implementation allows you to inject
+its net.Listener, you can inject this instead and it will accept in-memory
+network connections.
+
 ```go
 l, _ := netmem.Listen()
 defer l.Close()
